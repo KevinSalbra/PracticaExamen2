@@ -14,6 +14,7 @@ public class Vehiculo {
     private String numLlantas;
     private String marca;
     private String cantPasajeros;
+    private Integer peso;
 
     public Vehiculo() {
     }
@@ -23,6 +24,7 @@ public class Vehiculo {
         this.numLlantas = data[1];
         this.marca = data[2];
         this.cantPasajeros = data[3];
+        this.peso = Integer.valueOf(data[4]);
     }
 
     public String getNumLlantas() {
