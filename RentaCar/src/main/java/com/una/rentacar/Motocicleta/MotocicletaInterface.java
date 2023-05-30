@@ -12,6 +12,6 @@ public interface MotocicletaInterface {
 
     public String agregarMoto(String[] data);
 
-    public String[] buscar(String id);
+    public String buscar(String id);
 
 }

@@ -8,8 +8,9 @@ package com.una.rentacar.Camion;
  *
  * @author Admin
  */
-public class CamionController {
+public class CamionController implements CamionInterface{
     
+     @Override
      public String agregarCamion (String[] data)
     {
         String response = "Camion ingresado previamente.";
@@ -24,6 +25,7 @@ public class CamionController {
     }
     
    
+     @Override
      public String[] buscar(String id) {
          
         if (CamionConteiner.exist(id)) {
