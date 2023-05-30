@@ -46,6 +46,7 @@ public class MotocicletaControllerTest {
         String id ="L1231";
         String result = instance.buscar(id);
         
+        
         assertEquals(expResult, result);
         
     }
