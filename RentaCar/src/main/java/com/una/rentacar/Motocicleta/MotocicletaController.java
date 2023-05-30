@@ -14,8 +14,8 @@ public class MotocicletaController implements MotocicletaInterface{
     public String agregarMoto (String[] data)
     {
         String response = "Motocicleta ingresada previamente.";
-        if (MotocicletaContainer.exist(data[0])) {
-            Motocicleta moto = new Motocicleta(data);
+          Motocicleta moto = new Motocicleta(data);
+        if (!MotocicletaContainer.exist(moto.getId())) {
             if (MotocicletaContainer.agregarMoto(moto)) {
                 response = "Motocicleta agregada correctamente.";
             }
@@ -25,13 +25,14 @@ public class MotocicletaController implements MotocicletaInterface{
     }
     
     @Override
-     public String[] buscar(String id) {
-        if (MotocicletaContainer.exist(id)) {
-           Motocicleta motocicleta = MotocicletaContainer.buscarMoto(id);
-            String[] data = {motocicleta.getMarca(), motocicleta.getCantPasajeros(), motocicleta.getNumLlantas(), motocicleta.getCantCc()};
-            return data;
+     public String buscar(String id) {
+        if (MotocicletaContainer.buscarMoto(id) == null) {
+            return "Moto no encontrada";
+          
+        }else{
+            System.out.println(MotocicletaContainer.buscarMoto(id));
+            return "Moto encontrada";
         }
-        return null;
     }
 
 }

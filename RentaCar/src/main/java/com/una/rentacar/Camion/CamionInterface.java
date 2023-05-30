@@ -8,6 +8,6 @@ package com.una.rentacar.Camion;
  *
  * @author Admin
  */
-public class CamionInterface {
+public interface CamionInterface {
     
 }

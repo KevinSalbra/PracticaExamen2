@@ -30,7 +30,6 @@ public class MotocicletaContainer {
 
     public static Motocicleta buscarMoto(String id) {
         if (exist(id)) {
-
             return cMotocicleta.get(id);
         }
         return null;
