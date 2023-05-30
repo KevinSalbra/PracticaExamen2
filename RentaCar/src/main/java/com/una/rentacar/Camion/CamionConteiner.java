@@ -4,10 +4,36 @@
  */
 package com.una.rentacar.Camion;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Admin
  */
 public class CamionConteiner {
     
+    private static Map<String, Camion> cCamion = new HashMap<String, Camion>();
+    
+    public static boolean exist(String id)
+    {
+        return cCamion.containsKey(id);
+    }
+    
+    public static boolean agregarCamion(Camion c) {
+        if (!cCamion.containsKey(c.getId())) {
+            cCamion.put(c.getId(), c);
+            return true;
+        }
+        return false;
+    }
+
+    public static Camion buscarCamion(String id) {
+        if (exist(id)) {
+
+            return cCamion.get(id);
+            
+        }
+        return null;
+    }
 }
