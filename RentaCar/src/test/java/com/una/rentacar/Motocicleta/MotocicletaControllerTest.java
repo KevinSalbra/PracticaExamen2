@@ -39,7 +39,7 @@ public class MotocicletaControllerTest {
         String[] data = {"L1231", "3", "Sabra", "3","300", "250"};
          String result1 = instance.agregarMoto(data);
         
-        Motocicleta moto = new Motocicleta();
+        
         
         System.out.println("buscar");
         String expResult = "Moto encontrada";

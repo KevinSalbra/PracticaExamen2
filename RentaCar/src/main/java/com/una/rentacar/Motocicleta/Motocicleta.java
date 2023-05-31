@@ -20,7 +20,7 @@ public class Motocicleta extends Vehiculo{
 
     public Motocicleta(String[] data) {
         super(data);
-        this.cantCc = data[0];
+        this.cantCc = data[5];
     }
 
     public String getCantCc() {
@@ -30,5 +30,13 @@ public class Motocicleta extends Vehiculo{
     public void setCantCc(String cantCc) {
         this.cantCc = cantCc;
     }
+
+    @Override
+    public String toString() {
+        return "Motocicleta{" + "cantCc: " + cantCc +"\n"+ "Cantidad de Pasajeros: "+this.getCantPasajeros() +"\n"+ "Identificacion del vehiculo: "+this.getId() +"\n"+
+                "Marca= "+this.getMarca()+"\n"+"Numero de llantas= "+this.getNumLlantas()+"Peso= "+this.getPeso()+ '}';
+    }
+    
+    
     
 }
