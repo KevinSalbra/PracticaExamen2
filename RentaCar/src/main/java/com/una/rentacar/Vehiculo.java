@@ -59,4 +59,21 @@ public class Vehiculo {
         this.id = id;
     }
 
+    public Integer getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Integer peso) {
+        this.peso = peso;
+    }
+    
+    
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" + "id=" + id + ", numLlantas=" + numLlantas + ", marca=" + marca + ", cantPasajeros=" + cantPasajeros + ", peso=" + peso + '}';
+    }
+    
+    
+
 }
