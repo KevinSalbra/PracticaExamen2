@@ -4,7 +4,8 @@
  */
 package Main;
 
-import UI.UI;
+
+import View.Menu;
 
 /**
  *
@@ -13,53 +14,9 @@ import UI.UI;
 public class Main {
     public static void main(String[] args) {
         
-        
-        
-        
+       Menu menu = new Menu();
+       menu.setVisible(true);
+       
     }
     
-      private static void Menu() {
-
-        int opc1;
-
-        String options[] = {"Add Administrator", "Add collaborator", "Add Project", "Add Sprint", "Add Task", "Exit"};
-
-        do {
-
-            opc1 = UI.menu("Menu", options);
-
-            switch (opc1) {
-
-                case 0:
-                   
-                    break;
-
-                case 1:
-                   
-                    break;
-
-                case 2:
-                  
-                    break;
-
-                case 3:
-                   
-                    break;
-
-                case 4:
-                   
-                    break;
-
-                case 5:
-                    UI.print("Leaving....");
-                    break;
-
-                default:
-                    UI.print("Type a valid option");
-                    break;
-            }
-
-        } while (opc1 != 5);
-
-    }
 }
