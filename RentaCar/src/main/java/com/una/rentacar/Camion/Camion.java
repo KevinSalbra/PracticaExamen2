@@ -20,9 +20,17 @@ public class Camion extends Vehiculo{
 
     public Camion(String[] data) {
         super(data);
-        this.Nacionalidad = data[0];
-        this.capacidadDeCombustible = Integer.valueOf(data[1]);
-        this.articulado = Boolean.valueOf(data[2]);
+        this.setId(data[0]);
+        this.setNumLlantas(data[1]);
+        this.setMarca(data[2]);
+        this.setCantPasajeros(data[3]);
+        this.setPeso(Integer.valueOf(data[4]));
+        
+        
+        
+        this.Nacionalidad = data[5];
+        this.capacidadDeCombustible = Integer.valueOf(data[6]);
+        this.articulado = Boolean.valueOf(data[7]);
     }
     
     // set y get de la clase
