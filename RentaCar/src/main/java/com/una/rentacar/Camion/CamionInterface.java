@@ -14,4 +14,5 @@ public interface CamionInterface {
 
     public String[] buscar(String id);
     
+     public Camion buscarCamion(String id);
 }
