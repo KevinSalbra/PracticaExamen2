@@ -13,6 +13,8 @@ public interface CamionInterface {
     public String agregarCamion(String[] data);
 
     public String[] buscar(String id);
-    
-     public Camion buscarCamion(String id);
+
+    public Camion buscarCamion(String id);
+
+    public String eliminar(String id);
 }
