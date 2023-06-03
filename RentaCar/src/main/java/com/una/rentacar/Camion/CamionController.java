@@ -14,7 +14,7 @@ public class CamionController implements CamionInterface{
      public String agregarCamion (String[] data)
     {
         String response = "Camion ingresado previamente.";
-        if (CamionConteiner.exist(data[0])) {
+        if (!CamionConteiner.exist(data[0])) {
            Camion camion = new Camion(data);
             if (CamionConteiner.agregarCamion(camion)) {
                 response = "Camion agregado correctamente.";
@@ -36,5 +36,17 @@ public class CamionController implements CamionInterface{
             return data;
         }
         return null;
+    }
+     
+     @Override
+     public Camion buscarCamion(String id) {
+        
+        if (CamionConteiner.buscarCamion(id) == null) {
+            return null;
+        } else {
+           
+            return CamionConteiner.buscarCamion(id);
+        }
+        
     }
 }

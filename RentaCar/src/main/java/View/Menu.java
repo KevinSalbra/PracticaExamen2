@@ -30,10 +30,25 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         MenuLabel = new javax.swing.JLabel();
         opcionesLabel = new javax.swing.JLabel();
         BuscarButton = new javax.swing.JButton();
         AgregarButton1 = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -68,17 +83,17 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(MenuLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(63, 63, 63)
-                        .addComponent(opcionesLabel)))
-                .addContainerGap(106, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(BuscarButton)
-                .addGap(157, 157, 157))
+                        .addComponent(opcionesLabel))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BuscarButton)
+                        .addGap(59, 59, 59)))
+                .addContainerGap(65, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(73, 73, 73)
                     .addComponent(AgregarButton1)
-                    .addContainerGap(271, Short.MAX_VALUE)))
+                    .addContainerGap(230, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,9 +102,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(MenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(opcionesLabel)
-                .addGap(27, 27, 27)
+                .addGap(26, 26, 26)
                 .addComponent(BuscarButton)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(101, 101, 101)
@@ -118,6 +133,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton AgregarButton1;
     private javax.swing.JButton BuscarButton;
     private javax.swing.JLabel MenuLabel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel opcionesLabel;
     // End of variables declaration//GEN-END:variables
 }
