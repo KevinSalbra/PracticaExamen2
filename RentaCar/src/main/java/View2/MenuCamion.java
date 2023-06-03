@@ -4,17 +4,28 @@
  */
 package View2;
 
+import com.una.rentacar.Camion.Camion;
+import com.una.rentacar.Camion.CamionController;
+import com.una.rentacar.Camion.CamionInterface;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Kevin Salazar
  */
 public class MenuCamion extends javax.swing.JFrame {
-
-    /**
-     * Creates new form MenuCamion
-     */
+    
+    private CamionInterface camion;
+    
     public MenuCamion() {
-        initComponents();
+        
+        try {
+            initComponents();
+            camion = new CamionController();
+            this.setLocationRelativeTo(null);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
     }
 
     /**
@@ -48,7 +59,7 @@ public class MenuCamion extends javax.swing.JFrame {
         BottonBuscarCamion.setText("BUSCAR");
 
         BottonVolverCamion.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
-        BottonVolverCamion.setText("VOLVER");
+        BottonVolverCamion.setText("SALIR");
         BottonVolverCamion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonVolverCamionActionPerformed(evt);
@@ -97,8 +108,7 @@ public class MenuCamion extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonIngresarCamionActionPerformed
 
     private void BottonVolverCamionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVolverCamionActionPerformed
-       
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_BottonVolverCamionActionPerformed
 
 

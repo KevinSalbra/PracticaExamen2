@@ -36,4 +36,12 @@ public class CamionConteiner {
         }
         return null;
     }
+    
+        public static boolean eliminarCamion(String id) {
+        if (exist(id)) {
+            cCamion.remove(id);
+            return true;
+        }
+        return false;
+    }
 }

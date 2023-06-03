@@ -4,17 +4,25 @@
  */
 package View2;
 
+import com.una.rentacar.Camion.CamionController;
+import com.una.rentacar.Camion.CamionInterface;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Kevin Salazar
  */
 public class IngresarCamion extends javax.swing.JFrame {
 
+    private CamionInterface camion;
+
     /**
      * Creates new form IngresarCamion
      */
     public IngresarCamion() {
         initComponents();
+        camion = new CamionController();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -34,13 +42,18 @@ public class IngresarCamion extends javax.swing.JFrame {
         BottonCantPasajerosCamion = new javax.swing.JLabel();
         BottonPesoCamion = new javax.swing.JLabel();
         BottonNacionalidadCamion = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        CantidadPasajeros = new javax.swing.JTextField();
+        Nacionalidad = new javax.swing.JTextField();
+        Peso = new javax.swing.JTextField();
+        Marca = new javax.swing.JTextField();
+        ID = new javax.swing.JTextField();
+        NumeroLlantas = new javax.swing.JTextField();
+        MenuCamionVolver = new javax.swing.JButton();
+        CamionMenuAgregar = new javax.swing.JButton();
+        CapacidadCombustible = new javax.swing.JLabel();
+        Combustible = new javax.swing.JTextField();
+        BUSCAR = new javax.swing.JButton();
+        EliminarMenuCamion = new javax.swing.JButton();
 
         jLabel7.setText("jLabel7");
 
@@ -67,10 +80,37 @@ public class IngresarCamion extends javax.swing.JFrame {
         BottonNacionalidadCamion.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
         BottonNacionalidadCamion.setText("NACIONALIDAD");
 
-        jButton1.setText("VOLVER");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        MenuCamionVolver.setText("VOLVER");
+        MenuCamionVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                MenuCamionVolverActionPerformed(evt);
+            }
+        });
+
+        CamionMenuAgregar.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        CamionMenuAgregar.setText("AGREGAR");
+        CamionMenuAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CamionMenuAgregarActionPerformed(evt);
+            }
+        });
+
+        CapacidadCombustible.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        CapacidadCombustible.setText("CAPACIDAD COMBUSTIBLE");
+
+        BUSCAR.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        BUSCAR.setText("BUSCAR");
+        BUSCAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BUSCARActionPerformed(evt);
+            }
+        });
+
+        EliminarMenuCamion.setFont(new java.awt.Font("Segoe UI Symbol", 0, 14)); // NOI18N
+        EliminarMenuCamion.setText("ELIMINAR");
+        EliminarMenuCamion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarMenuCamionActionPerformed(evt);
             }
         });
 
@@ -80,101 +120,200 @@ public class IngresarCamion extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Marca, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(CapacidadCombustible)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Combustible))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(0, 11, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(BottonMarcaCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(BottonIdentificadorCamion)
                                 .addComponent(BottonPesoCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(65, 65, 65)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(BottonNumeroLlantasCamion)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(ID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Peso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(BottonNacionalidadCamion)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(BottonCantPasajerosCamion)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(Nacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(BottonNumeroLlantasCamion)
+                            .addGap(51, 51, 51))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 134, Short.MAX_VALUE)
-                .addComponent(TituloIngresarCamion)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(NumeroLlantas, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BottonCantPasajerosCamion)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CantidadPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(160, 160, 160))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(TituloIngresarCamion)
+                        .addGap(40, 40, 40)
+                        .addComponent(MenuCamionVolver))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jButton1))
+                .addComponent(CamionMenuAgregar)
+                .addGap(57, 57, 57)
+                .addComponent(BUSCAR)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(EliminarMenuCamion)
+                .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(MenuCamionVolver)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(TituloIngresarCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BottonIdentificadorCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BottonMarcaCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BottonPesoCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(Peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BottonNacionalidadCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BottonCantPasajerosCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BottonNumeroLlantasCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52))))
+                            .addComponent(CantidadPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Nacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BottonNumeroLlantasCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NumeroLlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CapacidadCombustible)
+                    .addComponent(Combustible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CamionMenuAgregar)
+                    .addComponent(BUSCAR)
+                    .addComponent(EliminarMenuCamion))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void MenuCamionVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCamionVolverActionPerformed
         MenuCamion camion1 = new MenuCamion();
         camion1.setVisible(true);
         this.setVisible(false);
 // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_MenuCamionVolverActionPerformed
+
+    private void CamionMenuAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamionMenuAgregarActionPerformed
+        if (verify()) {
+            String data[] = new String[7];
+            data[0] = ID.getText();
+            data[1] = NumeroLlantas.getText();
+            data[2] = Marca.getText();
+            data[3] = CantidadPasajeros.getText();
+            data[4] = Peso.getText();
+            data[5] = Nacionalidad.getText();
+            data[6] = Combustible.getText();
+            String msj = camion.agregarCamion(data);
+            JOptionPane.showMessageDialog(this, msj);
+            clear();
+        } else {
+            JOptionPane.showMessageDialog(this, "Debe completar todos los campos",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_CamionMenuAgregarActionPerformed
+
+    private void BUSCARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BUSCARActionPerformed
+        String id = JOptionPane.showInputDialog("Digite el id a buscar");
+        if (!id.isEmpty()) {
+            String data[] = camion.buscar(id);
+            if (data != null) {
+                ID.setText(data[0]);
+                NumeroLlantas.setText(data[1]);
+                Marca.setText(data[2]);
+                CantidadPasajeros.setText(data[3]);
+                Peso.setText(data[4]);
+                Nacionalidad.setText(data[5]);
+                Combustible.setText(data[6]);
+            } else {
+                JOptionPane.showMessageDialog(this, "No se encontró");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No ingresó el id");
+        }
+    }//GEN-LAST:event_BUSCARActionPerformed
+
+    private void EliminarMenuCamionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarMenuCamionActionPerformed
+        String id = JOptionPane.showInputDialog("Digite el id a eliminar");
+        if (!id.isEmpty()) {
+            camion.eliminar(id);
+            JOptionPane.showMessageDialog(this, "Se ha eliminado el elemento con exito.");
+            clear();
+        } else {
+            JOptionPane.showMessageDialog(this, "No se ha encontrado el elemento.");
+        }
+
+    }//GEN-LAST:event_EliminarMenuCamionActionPerformed
+
+    private boolean verify() {
+        if (!ID.getText().isBlank() && !NumeroLlantas.getText().isBlank() && !Marca.getText().isBlank() && !CantidadPasajeros.getText().isBlank()
+                && !Peso.getText().isBlank() && !Nacionalidad.getText().isBlank() && !Combustible.getText().isBlank()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void clear() {
+        ID.setText("");
+        NumeroLlantas.setText("");
+        Marca.setText("");
+        CantidadPasajeros.setText("");
+        Peso.setText("");
+        Nacionalidad.setText("");
+        Combustible.setText("");
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BUSCAR;
     private javax.swing.JLabel BottonCantPasajerosCamion;
     private javax.swing.JLabel BottonIdentificadorCamion;
     private javax.swing.JLabel BottonMarcaCamion;
     private javax.swing.JLabel BottonNacionalidadCamion;
     private javax.swing.JLabel BottonNumeroLlantasCamion;
     private javax.swing.JLabel BottonPesoCamion;
+    private javax.swing.JButton CamionMenuAgregar;
+    private javax.swing.JTextField CantidadPasajeros;
+    private javax.swing.JLabel CapacidadCombustible;
+    private javax.swing.JTextField Combustible;
+    private javax.swing.JButton EliminarMenuCamion;
+    private javax.swing.JTextField ID;
+    private javax.swing.JTextField Marca;
+    private javax.swing.JButton MenuCamionVolver;
+    private javax.swing.JTextField Nacionalidad;
+    private javax.swing.JTextField NumeroLlantas;
+    private javax.swing.JTextField Peso;
     private javax.swing.JLabel TituloIngresarCamion;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
