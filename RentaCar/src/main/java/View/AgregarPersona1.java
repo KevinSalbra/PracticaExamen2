@@ -18,8 +18,8 @@ public class AgregarPersona1 extends javax.swing.JFrame {
      * Creates new form AgregarPersona1
      */
     private CamionInterface camion;
-
-    public AgregarPersona1() {
+    
+    public AgregarPersona1() throws Exception {
         initComponents();
         camion = new CamionController();
 
@@ -223,7 +223,7 @@ public class AgregarPersona1 extends javax.swing.JFrame {
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
         // TODO add your handling code here:
-        
+
         String data[] = new String[7];
         data[0] = ID.getText();
         data[1] = NumeroLlantas.getText();
@@ -232,13 +232,15 @@ public class AgregarPersona1 extends javax.swing.JFrame {
         data[4] = Peso.getText();
         data[5] = Nacionalida.getText();
         data[6] = Combustible.getText();
-        String mensaje =camion.agregarCamion(data);
+        String mensaje = camion.agregarCamion(data);
         JOptionPane.showMessageDialog(this, mensaje);
-        clear(); 
+        clear();
+
+        
         
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
-    private void clear(){
+    private void clear() {
         ID.setText("");
         NumeroLlantas.setText("");
         Marca.setText("");
@@ -247,11 +249,11 @@ public class AgregarPersona1 extends javax.swing.JFrame {
         Nacionalida.setText("");
         Combustible.setText("");
     }
-    
-     private boolean verify(){
+
+    private boolean verify() {
         return !ID.getText().isBlank();
     }
-    
+
     private void MarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MarcaActionPerformed
@@ -266,21 +268,20 @@ public class AgregarPersona1 extends javax.swing.JFrame {
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         // TODO add your handling code here:
-        
-   String id = JOptionPane.showInputDialog("Ingrese el id que desea buscar");
-   
-   if(camion.buscarCamion(id)!=null){
-       JOptionPane.showMessageDialog(this, camion.buscarCamion(id));
-   }else{
-         JOptionPane.showMessageDialog(this,"No se encontro la id");
-   }
-      
+
+        String id = JOptionPane.showInputDialog("Ingrese el id que desea buscar");
+
+        if (camion.buscarCamion(id) != null) {
+            JOptionPane.showMessageDialog(this, camion.buscarCamion(id));
+        } else {
+            JOptionPane.showMessageDialog(this, "No se encontro la id");
+        }
+
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     /**
      * @param args the command line arguments
      */
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Combustible;

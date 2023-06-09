@@ -20,11 +20,14 @@ public class Vehiculo {
     }
 
     public Vehiculo(String[] data) {
-        this.id = data[0];
-        this.numLlantas = data[1];
-        this.marca = data[2];
-        this.cantPasajeros = data[3];
-        this.peso = Integer.valueOf(data[4]);
+       
+            this.id = data[0];
+            this.numLlantas = data[1];
+            this.marca = data[2];
+            this.cantPasajeros = data[3];
+            this.peso = Integer.valueOf(data[4]);
+      
+
     }
 
     public String getNumLlantas() {
@@ -66,14 +69,10 @@ public class Vehiculo {
     public void setPeso(Integer peso) {
         this.peso = peso;
     }
-    
-    
 
     @Override
     public String toString() {
         return "Vehiculo{" + "id=" + id + ", numLlantas=" + numLlantas + ", marca=" + marca + ", cantPasajeros=" + cantPasajeros + ", peso=" + peso + '}';
     }
-    
-    
 
 }

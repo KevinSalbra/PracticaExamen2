@@ -4,6 +4,8 @@
  */
 package com.una.rentacar;
 
+
+
 /**
  *
  * @author Kevin Salazar
@@ -11,19 +13,18 @@ package com.una.rentacar;
 public class VehiculoController implements VehiculoInterface{
     
     @Override
-    public String agregar(String[] data)
+     public String agregar (String[] data)
     {
-        String response = "Vehiculo ingresado previamente.";
-        if (VehiculoContainer.exist(data[0])) {
-            Vehiculo vehiculo = new Vehiculo(data);
+       String response = "Motocicleta ingresada previamente.";
+          Vehiculo vehiculo = new Vehiculo(data);
+        if (!VehiculoContainer.exist(vehiculo.getId())) {
             if (VehiculoContainer.agregarVehiculo(vehiculo)) {
-                response = "vehiculo agregado exitosamente";
-            } else {
-                response = "Error al agregar los datos";
+                response = "Motocicleta agregada correctamente.";
             }
+            else response = "Error al agregar los datos";
         }
         return response;
-    }   
+    }
     
     @Override
         public String[] buscar(String id) {

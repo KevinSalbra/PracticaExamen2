@@ -19,7 +19,7 @@ public class Motocicleta extends Vehiculo{
     }
 
     public Motocicleta(String[] data) {
-        super(data);
+        
         this.cantCc = data[5];
     }
 

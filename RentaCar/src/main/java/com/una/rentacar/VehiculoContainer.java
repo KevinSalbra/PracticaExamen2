@@ -4,6 +4,9 @@
  */
 package com.una.rentacar;
 
+
+import com.una.rentacar.Camion.CamionAdapter;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,16 +14,18 @@ import java.util.Map;
  *
  * @author Kevin Salazar
  */
-public class VehiculoContainer {
-    private static Map<String, Vehiculo> cVehiculo = new HashMap<String, Vehiculo>();
+public class VehiculoContainer extends CamionAdapter{
+    private static Map<String, Vehiculo> cVehiculo = new HashMap<>();
+    
+    
     
     public static boolean exist(String id)
     {
         return cVehiculo.containsKey(id);
     }
     
-    public static boolean agregarVehiculo(Vehiculo c) {
-        if (!cVehiculo.containsKey(c.getId())) {
+    public static boolean agregarVehiculo(Vehiculo c){
+       if(!exist(c.getId())){
             cVehiculo.put(c.getId(), c);
             return true;
         }

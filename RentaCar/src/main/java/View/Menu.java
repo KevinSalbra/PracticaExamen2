@@ -14,9 +14,10 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Ventana1
      */
     AgregarPersona1 agregar;
-    
+    Table tabla;
     public Menu() {
         agregar = new AgregarPersona1();
+        tabla = new Table();
         initComponents();
         
     }
@@ -36,6 +37,7 @@ public class Menu extends javax.swing.JFrame {
         opcionesLabel = new javax.swing.JLabel();
         BuscarButton = new javax.swing.JButton();
         AgregarButton1 = new javax.swing.JButton();
+        jButtonTable = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -72,22 +74,33 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jButtonTable.setText("Table");
+        jButtonTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTableActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(163, 163, 163)
+                            .addComponent(MenuLabel))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(63, 63, 63)
+                            .addComponent(opcionesLabel))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(BuscarButton)
+                            .addGap(59, 59, 59)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(MenuLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(opcionesLabel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(BuscarButton)
-                        .addGap(59, 59, 59)))
+                        .addGap(126, 126, 126)
+                        .addComponent(jButtonTable)))
                 .addContainerGap(65, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -104,7 +117,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(opcionesLabel)
                 .addGap(26, 26, 26)
                 .addComponent(BuscarButton)
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonTable)
+                .addContainerGap(141, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(101, 101, 101)
@@ -125,6 +140,12 @@ public class Menu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_AgregarButton1ActionPerformed
 
+    private void jButtonTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTableActionPerformed
+        // TODO add your handling code here:
+         tabla.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonTableActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -133,6 +154,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton AgregarButton1;
     private javax.swing.JButton BuscarButton;
     private javax.swing.JLabel MenuLabel;
+    private javax.swing.JButton jButtonTable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel opcionesLabel;

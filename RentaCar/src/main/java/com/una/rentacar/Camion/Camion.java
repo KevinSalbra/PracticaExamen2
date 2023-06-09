@@ -5,12 +5,13 @@
 package com.una.rentacar.Camion;
 
 import com.una.rentacar.Vehiculo;
+import java.io.Serializable;
 
 /**
  *
  * @author Admin
  */
-public class Camion extends Vehiculo{
+public class Camion extends Vehiculo implements Serializable{
 
     private Integer capacidadDeCombustible;
     private String Nacionalidad;
@@ -18,8 +19,8 @@ public class Camion extends Vehiculo{
     public Camion() {
     }
 
-    public Camion(String[] data) {
-        super(data);
+    public Camion(String[] data) throws Exception {
+         if(data.length==7){
         this.setId(data[0]);
         this.setNumLlantas(data[1]);
         this.setMarca(data[2]);
@@ -30,6 +31,11 @@ public class Camion extends Vehiculo{
         
         this.Nacionalidad = data[5];
         this.capacidadDeCombustible = Integer.valueOf(data[6]);
+        
+        }else{
+            throw new Exception("El tamaño del arreglo no "
+                    + "cumple con la cantidad de atributos");
+        }
         
     }
     
